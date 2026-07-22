@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prepara 360 - Regional 15</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        /* --- VARIABLES Y ESTILOS BASE --- */
+        :root {
+            --azul-oscuro: #0a2540;
+            --azul-primario: #0066cc;
+            --azul-claro: #e6f0fa;
+            --blanco: #ffffff;
+            --texto-oscuro: #2c3e50;
+            --sombra: 0 10px 30px rgba(0, 102, 204, 0.1);
+            --transicion: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f8fafc;
+            color: var(--texto-oscuro);
+            line-height: 1.6;
+        }
+
+        /* --- ENCABEZADO (HERO) --- */
+        header {
+            background: linear-gradient(135deg, var(--azul-oscuro) 0%, var(--azul-primario) 100%);
+            color: var(--blanco);
+            text-align: center;
+            padding: 80px 20px;
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+        }
+
+        header h1 {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        .badge {
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            display: inline-block;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        /* --- SECCIÓN PRINCIPAL --- */
+        .container {
+            max-width: 1200px;
+            margin: -40px auto 60px;
+            padding: 0 20px;
+        }
+
+        .grid-dimensiones {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 30px;
+        }
+
+        /* --- TARJETAS INTERACTIVAS --- */
+        .card {
+            background: var(--blanco);
+            border-radius: 16px;
+            padding: 35px 25px;
+            box-shadow: var(--sombra);
+            transition: var(--transicion);
+            border: 1px solid rgba(0, 102, 204, 0.08);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--azul-primario);
+            transition: var(--transicion);
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 102, 204, 0.2);
+        }
+
+        .card:hover::before {
+            height: 8px;
+        }
+
+        .icon-box {
+            width: 70px;
+            height: 70px;
+            background: var(--azul-claro);
+            color: var(--azul-primario);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            transition: var(--transicion);
+        }
+
+        .card:hover .icon-box {
+            background: var(--azul-primario);
+            color: var(--blanco);
+        }
+
+        .card h2 {
+            color: var(--azul-oscuro);
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
+
+        .card p {
+            color: #5a6a85;
+            font-size: 0.95rem;
+        }
+
+        /* --- PIE DE PÁGINA --- */
+        footer {
+            background-color: var(--azul-oscuro);
+            color: var(--blanco);
+            text-align: center;
+            padding: 25px 20px;
+            margin-top: 40px;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* --- ADAPTABILIDAD A MÓVILES --- */
+        @media (max-width: 768px) {
+            header h1 { font-size: 2rem; }
+            header p { font-size: 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ENCABEZADO -->
+    <header>
+        <span class="badge">Gestión Educativa</span>
+        <h1>Prepara 360</h1>
+        <p>Modelo Integral de Gestión Educativa — Regional 15</p>
+    </header>
+
+    <!-- CONTENIDO PRINCIPAL: LAS 4 DIMENSIONES -->
+    <div class="container">
+        <div class="grid-dimensiones">
+
+            <!-- 1. Dimensión Académica -->
+            <div class="card">
+                <div class="icon-box">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+                <h2>Dimensión Académica</h2>
+                <p>Se enfoca en los saberes, competencias y contenidos curriculares. Garantiza que la oferta formativa responda a las necesidades actuales de los participantes, promoviendo el aprendizaje continuo y la excelencia educativa.</p>
+            </div>
+
+            <!-- 2. Dimensión Pedagógica -->
+            <div class="card">
+                <div class="icon-box">
+                    <i class="fa-solid fa-chalkboard-user"></i>
+                </div>
+                <h2>Dimensión Pedagógica</h2>
+                <p>Aborda los métodos de enseñanza, las estrategias didácticas y el rol del docente. Fomenta un entorno participativo, dinámico y adaptado a las características y ritmos de aprendizaje de los estudiantes.</p>
+            </div>
+
+            <!-- 3. Dimensión Administrativa -->
+            <div class="card">
+                <div class="icon-box">
+                    <i class="fa-solid fa-folder-tree"></i>
+                </div>
+                <h2>Dimensión Administrativa</h2>
+                <p>Gestiona eficientemente los recursos materiales, financieros y humanos. Asegura la logística necesaria, el registro de información y el funcionamiento óptimo de los centros educativos de la Regional 15.</p>
+            </div>
+
+            <!-- 4. Dimensión Institucional -->
+            <div class="card">
+                <div class="icon-box">
+                    <i class="fa-solid fa-sitemap"></i>
+                </div>
+                <h2>Dimensión Institucional</h2>
+                <p>Estructura el clima organizacional, la cultura de trabajo, el liderazgo y la articulación con la comunidad. Promueve la identidad del programa y la vinculación estratégica con los actores del sistema.</p>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- PIE DE PÁGINA -->
+    <footer>
+        <p>&copy; 2026 Prepara 360 — Regional 15. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>
